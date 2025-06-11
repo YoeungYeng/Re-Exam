@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string("name")->nullable();
             $table->double("cost", 10, 2);
             $table->double("price", 10, 2);
-            $table->foreignId("category_id")->constrained()->onDelete("cascade");
-            $table->foreignId("brand_id")->constrained()->onDelete("cascade");
+            $table->foreignId("categories_id")->constrained()->onDelete("cascade");
+            $table->foreignId("brands_id")->constrained()->onDelete("cascade");
             $table->timestamps();
         });
     }
