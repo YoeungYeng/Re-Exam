@@ -15,9 +15,7 @@ return new class extends Migration {
             $table->string("name")->nullable();
             $table->double("cost", 10, 2);
             $table->double("price", 10, 2);
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-
+             $table->foreignId("category_id")->constrained()->onDelete("cascade");
             $table->foreignId("brand_id")->constrained()->onDelete("cascade");
             $table->timestamps();
         });
